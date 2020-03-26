@@ -9,7 +9,10 @@ var ProductSchema = new mongoose.Schema({
     price: Number,
     color: String,
     description: String,
-    measure_id: Number,
+    measure_id: {
+        type: Number,
+        default: null
+    },
     ins: {
         type: Number,
         default: 0
@@ -18,10 +21,22 @@ var ProductSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
-    last_in: Date,
-    last_out: Date,
-    last_in_price: Number,
-    last_out_price: Number,
+    last_in: {
+        type: Date,
+        default: null
+    },
+    last_out: {
+        type: Date,
+        default: null
+    },
+    last_in_price: {
+        type: Number,
+        default: null
+    },
+    last_out_price: {
+        type: Number,
+        default: null
+    },
     active: {
         type: Boolean,
         default: true
@@ -38,7 +53,10 @@ var ProductSchema = new mongoose.Schema({
         type: Date,
         default: Date.now()
     },
-    deleted_at: Date
+    deleted_at: {
+        type: Date,
+        default: null
+    }
 });
 
 var Product = new mongoose.model('Product', ProductSchema);
