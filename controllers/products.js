@@ -26,6 +26,7 @@ const store = (req, res, next) => {
         quantity: body.quantity,
         price: body.price,
         color: body.color,
+        measure: body.measure,
         description: body.description,
         measure_id: body.measure_id,
         created_by: body.created_by,
@@ -50,7 +51,7 @@ const store = (req, res, next) => {
 const show = (req, res, next) => {
     let id = req.params.id;
 
-    Product.findById
+
 }
 
 module.exports = {

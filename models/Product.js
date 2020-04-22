@@ -5,13 +5,27 @@ var ProductSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    quantity: Number,
-    price: Number,
-    color: String,
-    description: String,
-    measure_id: {
+    quantity: {
         type: Number,
-        default: null
+        required: true
+    },
+    price: {
+        type: Number,
+        required: true
+    },
+    color: {
+        type: String,
+        required: true
+    },
+    description: {
+        type: String,
+        required: true
+    },
+    measure: {
+        type: Number,
+        required: true,
+        type: mongoose.Types.ObjectId,
+        ref: 'Mesaure'
     },
     ins: {
         type: Number,
